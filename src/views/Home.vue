@@ -4,10 +4,10 @@
       <Toast v-if="showToast" />
     </transition>
     <Todos @badValue="triggerToast" />
-    <transition name="fade">
+    <!-- <transition name="fade">
       <p v-if="showP">Reference is in the source code actually.</p>
-    </transition>
-    <button @click="showP = !showP">Toggle Animation Reference</button>
+    </transition> -->
+    <!-- <button @click="showP = !showP">Toggle Animation Reference</button> -->
   </div>
 </template>
 
@@ -21,14 +21,14 @@ export default {
   setup() {
     const showToast = ref(false);
 
-    const showP = ref(false);
+    // const showP = ref(false);
 
     const triggerToast = () => {
       showToast.value = true;
       setTimeout(() => (showToast.value = false), 3000);
     };
 
-    return { showToast, triggerToast, showP };
+    return { showToast, triggerToast };
   },
 };
 </script>
